@@ -25,6 +25,14 @@ ifdef CONFIG_LOGIWII_FF
 	hid-logitech-y	+= hid-lg4ff.o
 endif
 
+hid-wiimote-y		:= hid-wiimote-core.o
+ifdef CONFIG_HID_WIIMOTE_EXT
+	hid-wiimote-y	+= hid-wiimote-ext.o
+endif
+ifdef CONFIG_DEBUG_FS
+	hid-wiimote-y	+= hid-wiimote-debug.o
+endif
+
 obj-$(CONFIG_HID_A4TECH)	+= hid-a4tech.o
 obj-$(CONFIG_HID_ACRUX)		+= hid-axff.o
 obj-$(CONFIG_HID_APPLE)		+= hid-apple.o
@@ -53,6 +61,11 @@ obj-$(CONFIG_HID_QUANTA)	+= hid-quanta.o
 obj-$(CONFIG_HID_PANTHERLORD)	+= hid-pl.o
 obj-$(CONFIG_HID_PETALYNX)	+= hid-petalynx.o
 obj-$(CONFIG_HID_PICOLCD)	+= hid-picolcd.o
+obj-$(CONFIG_HID_PRIMAX)	+= hid-primax.o
+obj-$(CONFIG_HID_SAITEK)	+= hid-saitek.o
+obj-$(CONFIG_HID_SPEEDLINK)	+= hid-speedlink.o
+obj-$(CONFIG_HID_TIVO)		+= hid-tivo.o
+obj-$(CONFIG_HID_WIIMOTE)	+= hid-wiimote.o
 obj-$(CONFIG_HID_ROCCAT)	+= hid-roccat.o
 obj-$(CONFIG_HID_ROCCAT_COMMON)	+= hid-roccat-common.o
 obj-$(CONFIG_HID_ROCCAT_ARVO)	+= hid-roccat-arvo.o
